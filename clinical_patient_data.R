@@ -92,6 +92,7 @@ format_clinical_patient_data <- function(work_dir, obj_name, clin){
     file=file,
     append=TRUE,
     quote=FALSE,
-    sep='\t'
+    sep='\t',
+    na=""
   )
 }

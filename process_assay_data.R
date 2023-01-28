@@ -20,6 +20,7 @@ format_assay_data <- function(work_dir, obj_name, filename, assay, gene_metadata
     file=file.path(work_dir, obj_name, filename),
     quote=FALSE,
     row.names = FALSE,
-    sep='\t'
+    sep='\t',
+    na=""
   )
 }

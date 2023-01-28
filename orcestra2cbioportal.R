@@ -22,6 +22,30 @@ source(file.path(work_dir, 'clinical_patient_data.R'))
 source(file.path(work_dir, 'process_assay_data.R'))
 source(file.path(work_dir, 'format_snv_data.R'))
 
+# snv_files <- list.files('~/Documents/bhklab/orcestra2cbio/SNV')
+# for(file in snv_files){
+#   obj_name <- str_replace(file, '_SNV.csv', '')
+#   
+#   snv <- read.csv(file.path('~/Documents/bhklab/orcestra2cbio/SNV', file), sep=';')
+#   genome_ref <- 'GRCh38'
+#   if(obj_name %in% c('ICB_VanDenEnde', 'ICB_Miao1', 'ICB_Snyder', 'ICB_Van_Allen', 'ICB_Puch', 'ICB_Jerby_Arnon')){
+#     genome_ref <- 'GRCh37'
+#   }
+#   
+#   tsv_table <- format_snv_data(snv, genome_ref)
+#   write.table(
+#     tsv_table, 
+#     file=file.path('~/Documents/bhklab/orcestra2cbio/SNV', paste0(obj_name, '_SNV.tsv')), 
+#     sep='\t', 
+#     quote=FALSE, 
+#     row.names = FALSE
+#   )
+# }
+
+# amino acid changes available: ICB_Braun, ICB_Mariathasan, ICB_Miao1, ICB_Nathanson, ICB_Riaz, ICB_Roh, ICB_Van_Allen, ICB_Jung
+# missing amino acid changes: ICB_Liu 
+
+
 dir.create(input_dir)
 dir.create(output_dir)
 

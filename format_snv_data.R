@@ -10,7 +10,8 @@ format_snv_data <- function(work_dir, obj_name, filename, snv, genome_ref){
     'Reference_Allele', 
     'Tumor_Seq_Allele2', 
     'Variant_Classification', 
-    'Variant_Type'
+    'Variant_Type',
+    'HGVSp_Short'
   )
   
   snv$End_Position <- unlist(lapply(seq_along(rownames(snv)), function(index){
@@ -21,7 +22,6 @@ format_snv_data <- function(work_dir, obj_name, filename, snv, genome_ref){
   snv$Chromosome <- str_replace(snv$Chromosome, 'chr', '')
   
   snv$NCBI_Build <- genome_ref
-  snv$HGVSp_Short  <- ''
   
   snv <- snv[, c(
     'Tumor_Sample_Barcode', 
@@ -33,6 +33,7 @@ format_snv_data <- function(work_dir, obj_name, filename, snv, genome_ref){
     'Tumor_Seq_Allele2', 
     'Variant_Classification', 
     'Variant_Type',
+    'HGVSp_Short',
     'NCBI_Build'
   )]
   
@@ -41,6 +42,7 @@ format_snv_data <- function(work_dir, obj_name, filename, snv, genome_ref){
     file=file.path(work_dir, obj_name, filename),
     quote=FALSE,
     row.names = FALSE,
-    sep='\t'
+    sep='\t',
+    na=""
   )
 }
